@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple SPA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            padding: 1rem;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .page {
+            display: none;
+            padding: 50px;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a onclick="navigateTo('home')">Home</a>
+        <a onclick="navigateTo('about')">About</a>
+        <a onclick="navigateTo('contact')">Contact</a>
+    </nav>
+
+    <div id="home" class="page active">
+        <h1>Welcome to the Home Page</h1>
+        <p>This is a single-page application built entirely in HTML, CSS, and vanilla JavaScript.</p>
+    </div>
+
+    <div id="about" class="page">
+        <h1>About Us</h1>
+        <p>Everything happens on a single HTML file by toggling visibility with JavaScript.</p>
+    </div>
+
+    <div id="contact" class="page">
+        <h1>Contact Us</h1>
+        <p>Feel free to reach out to us anytime!</p>
+    </div>
+
+    <script>
+        function navigateTo(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Show the selected page
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
