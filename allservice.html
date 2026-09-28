@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js">
+</script>
+<script>
+var app = angular.module("myApp",[]);
+app.service("MathService",function(){
+this.add = function(a,b){
+return a+b;
+};
+this.sub = function(a,b){
+return a-b;
+};
+this.mult = function(a,b){
+return a*b;
+};
+this.div = function(a,b){
+return a/b;
+};
+this.module = function(a,b){
+return a%b;
+};
+});
+app.controller("DemoController",function($scope,MathService){
+$scope.result = MathService.add(20,30);
+$scope.result = MathService.sub(20,30);
+$scope.result = MathService.mult(20,30);
+$scope.result = MathService.div(20,30);
+$scope.result = MathService.module(20,30);
+});
+</script>
+</head>
+<body ng-controller = "DemoController">
+Addition = {{result}}
+Substraction = {{result}}
+Multiplication = {{result}}
+Division= {{result}}
+Module = {{result}}
+</body>
+</html>
