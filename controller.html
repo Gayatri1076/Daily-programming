@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<title>Student Registration</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js">
+</script>
+<script>
+var app = angular.module("myApp",[]);
+app.controller("DemoController",function($scope){
+    $scope.name="Virat";
+});
+</script>
+</head>
+<body ng-controller="DemoController">
+<h2>{{name}}</h2>
+</body>
+</html>
