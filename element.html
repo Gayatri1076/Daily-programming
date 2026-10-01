@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<title>Custom Directives</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js">
+</script>
+<script>
+var app = angular.module("myApp",[]);
+app.directive("student",function(){
+return{
+restrict: 'E',
+template:"<h1>Hello Students....!!!</h1>"
+};
+});
+</script>
+</head>
+<body>
+<student></student>
+</body>
+</html>
