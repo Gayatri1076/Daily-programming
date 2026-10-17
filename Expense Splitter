@@ -1,0 +1,9 @@
+people = int(input("Enter number of people: "))
+total = float(input("Enter total expense: "))
+
+if people > 0 and total >= 0:
+    share = total / people
+    print("Total Expense: ₹", total)
+    print("Each Person Pays: ₹", round(share, 2))
+else:
+    print("Invalid input!")
