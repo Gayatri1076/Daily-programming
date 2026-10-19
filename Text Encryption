@@ -1,0 +1,24 @@
+text = input("Enter a message: ")
+shift = int(input("Enter shift value: "))
+
+encrypted = ""
+
+for char in text:
+    if char.isalpha():
+        base = ord('A') if char.isupper() else ord('a')
+        encrypted += chr((ord(char) - base + shift) % 26 + base)
+    else:
+        encrypted += char
+
+print("Encrypted message:", encrypted)
+
+decrypted = ""
+
+for char in encrypted:
+    if char.isalpha():
+        base = ord('A') if char.isupper() else ord('a')
+        decrypted += chr((ord(char) - base - shift) % 26 + base)
+    else:
+        decrypted += char
+
+print("Decrypted message:", decrypted)
